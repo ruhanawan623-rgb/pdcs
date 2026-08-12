@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Staff Directory - Punjab Degree School &amp; College</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-background": "#181c20",
+                        "inverse-surface": "#2d3135",
+                        "surface-dim": "#d7dadf",
+                        "surface-tint": "#435b9f",
+                        "secondary-container": "#fed65b",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9ff",
+                        "surface": "#f7f9ff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container": "#ebeef3",
+                        "secondary": "#735c00",
+                        "inverse-primary": "#b3c5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "primary": "#00113a",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e0e3e8",
+                        "primary-container": "#002366",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "outline": "#757682",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-container": "#26292a",
+                        "surface-container-high": "#e5e8ee",
+                        "on-tertiary-fixed": "#191c1d",
+                        "tertiary": "#121516",
+                        "on-surface": "#181c20",
+                        "surface-bright": "#f7f9ff",
+                        "on-primary-container": "#758dd5",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f1f4f9",
+                        "surface-container-highest": "#e0e3e8",
+                        "inverse-on-surface": "#eef1f6",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-surface-variant": "#444650",
+                        "on-primary-fixed": "#00174a",
+                        "tertiary-fixed": "#e1e3e4",
+                        "outline-variant": "#c5c6d2",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#745c00",
+                        "on-primary-fixed-variant": "#2a4386",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#8e9091"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "container-max-width": "1280px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["\"Source Sans 3\"", "sans-serif"],
+                        "display-lg": ["\"Source Serif 4\"", "serif"],
+                        "body-lg": ["\"Source Sans 3\"", "sans-serif"],
+                        "display-lg-mobile": ["\"Source Serif 4\"", "serif"],
+                        "label-caps": ["\"Source Sans 3\"", "sans-serif"],
+                        "headline-md": ["\"Source Serif 4\"", "serif"],
+                        "body-md": ["\"Source Sans 3\"", "sans-serif"],
+                        "body-sm": ["\"Source Sans 3\"", "sans-serif"],
+                        "headline-sm": ["\"Source Serif 4\"", "serif"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col md:flex-row">
+
+<!-- Top Navigation (Mobile Only) -->
+<header class="md:hidden bg-surface flex justify-between items-center w-full px-4 h-16 sticky top-0 z-50 border-b border-outline-variant">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-2xl">school</span>
+        <span class="font-headline-sm text-headline-sm font-bold text-primary">PDSC Staff</span>
+    </div>
+    <a href="index.html" class="text-xs font-label-bold text-primary">Main Site</a>
+</header>
+
+<!-- Side Navigation (Desktop Only) -->
+<nav class="hidden md:flex bg-surface-container-low fixed left-0 top-0 h-full w-[280px] border-r border-outline-variant flex-col py-6 px-4 gap-2 z-40">
+    <div class="flex items-center gap-3 mb-6 px-3">
+        <span class="material-symbols-outlined text-primary text-3xl">school</span>
+        <div>
+            <h1 class="font-headline-sm text-headline-sm text-primary leading-none mb-1">PDSC Admin</h1>
+            <p class="font-body-sm text-xs text-on-surface-variant">Faculty Portal</p>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5 flex-grow">
+        <a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-high transition-all font-label-bold text-label-bold rounded-lg group" href="index.html">
+            <span class="material-symbols-outlined group-hover:text-primary">home</span>
+            <span>Public Site</span>
+        </a>
+        <a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-high transition-all font-label-bold text-label-bold rounded-lg group" href="students.html">
+            <span class="material-symbols-outlined group-hover:text-primary">description</span>
+            <span>Student Records</span>
+        </a>
+        <a class="bg-primary text-on-primary rounded-lg flex items-center gap-3 px-4 py-3 transition-all font-label-bold text-label-bold shadow-sm" href="staff.html">
+            <span class="material-symbols-outlined">group</span>
+            <span>Staff Directory</span>
+        </a>
+        <a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-high transition-all font-label-bold text-label-bold rounded-lg group" href="admissions.html">
+            <span class="material-symbols-outlined group-hover:text-primary">school</span>
+            <span>Admissions Desk</span>
+        </a>
+    </div>
+
+    <div class="flex flex-col gap-1.5 mt-auto border-t border-outline-variant pt-4">
+        <a class="text-on-surface-variant flex items-center gap-3 px-4 py-2.5 hover:bg-surface-container-high transition-all font-label-bold text-label-bold rounded-lg group" href="index.html">
+            <span class="material-symbols-outlined group-hover:text-primary">logout</span>
+            <span>Exit Portal</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Main Content Area -->
+<main class="flex-grow md:ml-[280px] min-h-screen flex flex-col w-full">
+    <!-- Page Header & Actions -->
+    <div class="px-margin-mobile md:px-margin-desktop py-8 bg-surface-bright border-b border-outline-variant">
+        <div class="max-w-container-max-width mx-auto">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 class="font-headline-md text-headline-md text-primary mb-1">Staff &amp; Faculty Directory</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">Search and connect with faculty members and administration officers.</p>
+                </div>
+                <button onclick="openAddStaffModal()" class="bg-primary text-on-primary font-label-bold text-label-bold px-4 py-2.5 rounded-lg flex items-center gap-2 hover:bg-primary-container transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-[20px]">person_add</span>
+                    <span class="hidden sm:inline">Add Faculty</span>
+                </button>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+                <!-- Search -->
+                <div class="relative w-full md:max-w-md">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                    <input id="staff-search" onkeyup="filterStaff()" class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant" placeholder="Search by name, role, or department..." type="text"/>
+                </div>
+                <!-- Department Filters -->
+                <div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+                    <button onclick="setDepartmentFilter('ALL')" id="dept-ALL" class="dept-btn px-4 py-2 bg-primary text-on-primary font-label-bold text-xs border border-primary rounded-full whitespace-nowrap">All Departments</button>
+                    <button onclick="setDepartmentFilter('Science')" id="dept-Science" class="dept-btn px-4 py-2 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-xs border border-outline-variant rounded-full whitespace-nowrap transition-colors">Science</button>
+                    <button onclick="setDepartmentFilter('Arts')" id="dept-Arts" class="dept-btn px-4 py-2 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-xs border border-outline-variant rounded-full whitespace-nowrap transition-colors">Arts &amp; Humanities</button>
+                    <button onclick="setDepartmentFilter('Administration')" id="dept-Administration" class="dept-btn px-4 py-2 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-xs border border-outline-variant rounded-full whitespace-nowrap transition-colors">Administration</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Directory Grid -->
+    <div class="flex-grow px-margin-mobile md:px-margin-desktop py-8 bg-background">
+        <div class="max-w-container-max-width mx-auto">
+            <div id="staff-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-primary text-on-primary mt-auto">
+        <span class="font-body-sm text-body-sm">© 2024 Punjab Degree School and College. Staff &amp; Administrative Directory.</span>
+        <div class="flex gap-4 text-xs">
+            <a class="text-on-primary/80 hover:underline" href="index.html">Home</a>
+            <a class="text-on-primary/80 hover:underline" href="students.html">Students</a>
+            <a class="text-on-primary/80 hover:underline" href="admissions.html">Admissions</a>
+        </div>
+    </footer>
+</main>
+
+<!-- Contact Email Modal -->
+<div id="email-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center hidden p-4">
+    <div class="bg-surface-container-lowest rounded-2xl max-w-md w-full p-6 border border-outline-variant shadow-2xl space-y-4">
+        <div class="flex justify-between items-center border-b border-outline-variant pb-3">
+            <h3 id="email-modal-target" class="font-headline-sm text-lg text-primary">Send Email to Faculty</h3>
+            <button onclick="closeEmailModal()" class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <form onsubmit="handleSendEmail(event)" class="space-y-4 text-sm">
+            <div>
+                <label class="block font-label-bold mb-1">Subject *</label>
+                <input required class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg" placeholder="Inquiry regarding curriculum / schedule"/>
+            </div>
+            <div>
+                <label class="block font-label-bold mb-1">Message *</label>
+                <textarea required rows="4" class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg" placeholder="Write your message here..."></textarea>
+            </div>
+            <div class="flex justify-end gap-3 pt-2">
+                <button type="button" onclick="closeEmailModal()" class="px-4 py-2 bg-surface-container-high rounded-lg text-sm font-label-bold">Cancel</button>
+                <button type="submit" class="px-5 py-2 bg-primary text-on-primary rounded-lg text-sm font-label-bold hover:bg-primary-container">Send Message</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Add Staff Modal -->
+<div id="add-staff-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center hidden p-4">
+    <div class="bg-surface-container-lowest rounded-2xl max-w-md w-full p-6 border border-outline-variant shadow-2xl space-y-4">
+        <div class="flex justify-between items-center border-b border-outline-variant pb-3">
+            <h3 class="font-headline-sm text-lg text-primary">Add Faculty Member</h3>
+            <button onclick="closeAddStaffModal()" class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <form onsubmit="handleAddStaffSubmit(event)" class="space-y-4 text-sm">
+            <div>
+                <label class="block font-label-bold mb-1">Full Name &amp; Title *</label>
+                <input id="staff-name" required class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg" placeholder="e.g. Dr. Sarah Ahmad"/>
+            </div>
+            <div>
+                <label class="block font-label-bold mb-1">Role / Designation *</label>
+                <input id="staff-role" required class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg" placeholder="e.g. Professor of Physics"/>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <label class="block font-label-bold mb-1">Department *</label>
+                    <select id="staff-dept" required class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg">
+                        <option value="Science">Science</option>
+                        <option value="Arts">Arts &amp; Humanities</option>
+                        <option value="Administration">Administration</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-label-bold mb-1">Official Email *</label>
+                    <input id="staff-email" type="email" required class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg" placeholder="s.ahmad@pdsc.edu"/>
+                </div>
+            </div>
+            <div class="flex justify-end gap-3 pt-2">
+                <button type="button" onclick="closeAddStaffModal()" class="px-4 py-2 bg-surface-container-high rounded-lg text-sm font-label-bold">Cancel</button>
+                <button type="submit" class="px-5 py-2 bg-primary text-on-primary rounded-lg text-sm font-label-bold hover:bg-primary-container">Save Faculty</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+<script>
+    const staffMembers = [
+        { name: "Dr. Eleanor Vance", role: "Head of Science Faculty", dept: "Science", email: "e.vance@pdsc.edu", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" },
+        { name: "Prof. Arthur Pendelton", role: "Senior Lecturer in History", dept: "Arts", email: "a.pendelton@pdsc.edu", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" },
+        { name: "Mrs. Saima Khalid", role: "Registrar & Administrator", dept: "Administration", email: "s.khalid@pdsc.edu", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80" },
+        { name: "Dr. Tariq Mahmood", role: "Professor of Chemistry", dept: "Science", email: "t.mahmood@pdsc.edu", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+        { name: "Ms. Ayesha Siddiqui", role: "Head of English Literature", dept: "Arts", email: "a.siddiqui@pdsc.edu", image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=300&q=80" },
+        { name: "Engr. Rashid Minhas", role: "Computer Science Dept Chair", dept: "Science", email: "r.minhas@pdsc.edu", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+    ];
+
+    let currentDept = 'ALL';
+
+    function renderStaffGrid() {
+        const grid = document.getElementById('staff-grid');
+        const searchVal = document.getElementById('staff-search').value.toLowerCase();
+
+        const filtered = staffMembers.filter(s => {
+            const matchesSearch = s.name.toLowerCase().includes(searchVal) || s.role.toLowerCase().includes(searchVal) || s.email.toLowerCase().includes(searchVal);
+            if (!matchesSearch) return false;
+
+            if (currentDept === 'ALL') return true;
+            return s.dept === currentDept;
+        });
+
+        if (filtered.length === 0) {
+            grid.innerHTML = `<div class="col-span-full py-12 text-center text-on-surface-variant">No faculty members found matching your search criteria.</div>`;
+            return;
+        }
+
+        grid.innerHTML = filtered.map(s => `
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all">
+                <div class="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-primary/20 shadow-sm bg-surface-container">
+                    <img class="w-full h-full object-cover" src="${s.image}" alt="${s.name}" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(s.name)}&background=00113a&color=fff'"/>
+                </div>
+                <h3 class="font-headline-sm text-lg text-primary mb-1">${s.name}</h3>
+                <p class="font-label-bold text-xs text-on-surface mb-1">${s.role}</p>
+                <span class="inline-block px-2.5 py-0.5 bg-surface-container-low text-on-surface-variant text-[11px] font-label-caps rounded-full mb-4 border border-outline-variant">${s.dept} Dept</span>
+                <button onclick="openEmailModal('${s.name}', '${s.email}')" class="mt-auto w-full py-2 flex items-center justify-center gap-2 text-primary hover:bg-surface-container-low border border-outline-variant rounded-lg transition-colors font-label-bold text-xs">
+                    <span class="material-symbols-outlined text-base">mail</span> ${s.email}
+                </button>
+            </div>
+        `).join('');
+    }
+
+    function setDepartmentFilter(dept) {
+        currentDept = dept;
+        document.querySelectorAll('.dept-btn').forEach(btn => {
+            btn.className = "dept-btn px-4 py-2 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low font-label-bold text-xs border border-outline-variant rounded-full whitespace-nowrap transition-colors";
+        });
+        const activeBtn = document.getElementById(`dept-${dept}`);
+        if (activeBtn) {
+            activeBtn.className = "dept-btn px-4 py-2 bg-primary text-on-primary font-label-bold text-xs border border-primary rounded-full whitespace-nowrap";
+        }
+        renderStaffGrid();
+    }
+
+    function filterStaff() {
+        renderStaffGrid();
+    }
+
+    function openEmailModal(name, email) {
+        document.getElementById('email-modal-target').innerText = `Email to ${name}`;
+        document.getElementById('email-modal').classList.remove('hidden');
+    }
+
+    function closeEmailModal() {
+        document.getElementById('email-modal').classList.add('hidden');
+    }
+
+    function handleSendEmail(e) {
+        e.preventDefault();
+        closeEmailModal();
+        showToast('Email dispatched to faculty member successfully!', 'success');
+    }
+
+    function openAddStaffModal() {
+        document.getElementById('add-staff-modal').classList.remove('hidden');
+    }
+
+    function closeAddStaffModal() {
+        document.getElementById('add-staff-modal').classList.add('hidden');
+    }
+
+    function handleAddStaffSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('staff-name').value;
+        const role = document.getElementById('staff-role').value;
+        const dept = document.getElementById('staff-dept').value;
+        const email = document.getElementById('staff-email').value;
+
+        staffMembers.unshift({
+            name: name,
+            role: role,
+            dept: dept,
+            email: email,
+            image: `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=00113a&color=fff`
+        });
+
+        closeAddStaffModal();
+        renderStaffGrid();
+        showToast(`Faculty record for ${name} added!`, 'success');
+    }
+
+    function showToast(msg, type = 'info') {
+        const container = document.getElementById('toast-container');
+        if (!container) return;
+        const toast = document.createElement('div');
+        toast.className = `px-4 py-3 rounded-lg shadow-lg text-sm font-label-bold flex items-center gap-2 border transition-all ${
+            type === 'success' ? 'bg-emerald-800 text-white border-emerald-900' : 'bg-primary text-on-primary border-primary-container'
+        }`;
+        toast.innerHTML = `<span class="material-symbols-outlined text-base">info</span> ${msg}`;
+        container.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    }
+
+    // Initial Render
+    renderStaffGrid();
+</script>
+</body>
+</html>
