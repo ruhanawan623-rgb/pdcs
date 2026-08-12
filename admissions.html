@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Application for Admission - Punjab Degree School &amp; College</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-background": "#181c20",
+                        "inverse-surface": "#2d3135",
+                        "surface-dim": "#d7dadf",
+                        "surface-tint": "#435b9f",
+                        "secondary-container": "#fed65b",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9ff",
+                        "surface": "#f7f9ff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container": "#ebeef3",
+                        "secondary": "#735c00",
+                        "inverse-primary": "#b3c5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "primary": "#00113a",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e0e3e8",
+                        "primary-container": "#002366",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "outline": "#757682",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-container": "#26292a",
+                        "surface-container-high": "#e5e8ee",
+                        "on-tertiary-fixed": "#191c1d",
+                        "tertiary": "#121516",
+                        "on-surface": "#181c20",
+                        "surface-bright": "#f7f9ff",
+                        "on-primary-container": "#758dd5",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f1f4f9",
+                        "surface-container-highest": "#e0e3e8",
+                        "inverse-on-surface": "#eef1f6",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-surface-variant": "#444650",
+                        "on-primary-fixed": "#00174a",
+                        "tertiary-fixed": "#e1e3e4",
+                        "outline-variant": "#c5c6d2",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#745c00",
+                        "on-primary-fixed-variant": "#2a4386",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#8e9091"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "container-max-width": "1280px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["\"Source Sans 3\"", "sans-serif"],
+                        "display-lg": ["\"Source Serif 4\"", "serif"],
+                        "body-lg": ["\"Source Sans 3\"", "sans-serif"],
+                        "display-lg-mobile": ["\"Source Serif 4\"", "serif"],
+                        "label-caps": ["\"Source Sans 3\"", "sans-serif"],
+                        "headline-md": ["\"Source Serif 4\"", "serif"],
+                        "body-md": ["\"Source Sans 3\"", "sans-serif"],
+                        "body-sm": ["\"Source Sans 3\"", "sans-serif"],
+                        "headline-sm": ["\"Source Serif 4\"", "serif"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-background text-on-background min-h-screen flex flex-col">
+
+<!-- Shared Header Component -->
+<header class="bg-surface font-body-md text-body-md border-b border-outline-variant flex justify-between items-center w-full px-4 md:px-margin-desktop h-16 sticky top-0 z-50 shadow-sm">
+    <div class="flex items-center gap-6 md:gap-8">
+        <a href="index.html" class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+            <div class="font-headline-sm text-headline-sm font-bold text-primary">Punjab Degree School &amp; College</div>
+        </a>
+        <nav class="hidden md:flex gap-6 items-center">
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+            <a class="text-primary border-b-2 border-secondary pb-1 transition-colors font-label-bold" href="admissions.html">Admissions</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="students.html">Student Records</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="staff.html">Staff Directory</a>
+        </nav>
+    </div>
+    <div class="flex items-center gap-4">
+        <a href="students.html" class="flex items-center gap-2 bg-primary-container text-on-primary-container px-3 py-1.5 rounded-full hover:bg-primary text-sm font-label-bold transition-all">
+            <span class="material-symbols-outlined text-sm">admin_panel_settings</span>
+            <span class="hidden sm:inline">Admin Portal</span>
+        </a>
+    </div>
+</header>
+
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center py-10 px-margin-mobile md:px-margin-desktop w-full max-w-container-max-width mx-auto">
+    <div class="w-full max-w-4xl">
+        <div class="mb-8 text-center md:text-left">
+            <h1 class="font-headline-md text-headline-md text-primary mb-2">Application for Admission</h1>
+            <p class="text-on-surface-variant text-body-lg">Academic Session 2024–2025 • intermediate &amp; Degree Programs</p>
+        </div>
+
+        <!-- Stepper -->
+        <div class="mb-10 relative">
+            <div class="absolute top-4 left-0 w-full h-0.5 bg-surface-variant -z-10"></div>
+            <div class="flex justify-between items-center w-full">
+                <!-- Step 1 Indicator -->
+                <div class="flex flex-col items-center gap-2 cursor-pointer" onclick="goToStep(1)">
+                    <div id="step-circle-1" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-bold shadow-md transition-all">1</div>
+                    <span id="step-label-1" class="font-label-bold text-label-bold text-primary">Personal</span>
+                </div>
+                <!-- Step 2 Indicator -->
+                <div class="flex flex-col items-center gap-2 cursor-pointer" onclick="goToStep(2)">
+                    <div id="step-circle-2" class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-bold border border-outline-variant transition-all">2</div>
+                    <span id="step-label-2" class="font-label-bold text-label-bold text-on-surface-variant">Academic</span>
+                </div>
+                <!-- Step 3 Indicator -->
+                <div class="flex flex-col items-center gap-2 cursor-pointer" onclick="goToStep(3)">
+                    <div id="step-circle-3" class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-bold border border-outline-variant transition-all">3</div>
+                    <span id="step-label-3" class="font-label-bold text-label-bold text-on-surface-variant">Documents</span>
+                </div>
+                <!-- Step 4 Indicator -->
+                <div class="flex flex-col items-center gap-2 cursor-pointer" onclick="goToStep(4)">
+                    <div id="step-circle-4" class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-bold border border-outline-variant transition-all">4</div>
+                    <span id="step-label-4" class="font-label-bold text-label-bold text-on-surface-variant">Review</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Application Form Canvas -->
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-10 shadow-sm">
+            <form id="admission-form" onsubmit="handleFormSubmit(event)">
+                
+                <!-- STEP 1: Personal Information -->
+                <div id="step-1-content" class="step-pane">
+                    <h2 class="font-headline-sm text-headline-sm text-primary mb-6 border-b border-outline-variant pb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined">person</span> Personal Information
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="firstName">Legal First Name *</label>
+                            <input class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="firstName" name="firstName" placeholder="e.g. Ali" required type="text"/>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="lastName">Legal Last Name *</label>
+                            <input class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="lastName" name="lastName" placeholder="e.g. Raza" required type="text"/>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="email">Email Address *</label>
+                            <input class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="email" name="email" placeholder="applicant@example.com" required type="email"/>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="phone">Phone / WhatsApp *</label>
+                            <input class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="phone" name="phone" placeholder="+92 300 1234567" required type="tel"/>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="dob">Date of Birth *</label>
+                            <input class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="dob" name="dob" required type="date"/>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="gender">Gender *</label>
+                            <select class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2 flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="address">Residential Address *</label>
+                            <textarea class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="address" name="address" rows="2" placeholder="Street Address, City, Punjab" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Academic Background -->
+                <div id="step-2-content" class="step-pane hidden">
+                    <h2 class="font-headline-sm text-headline-sm text-primary mb-6 border-b border-outline-variant pb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined">school</span> Academic Background
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="program">Program Applying For *</label>
+                            <select class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="program" name="program" required>
+                                <option value="">Select Academic Program</option>
+                                <option value="F.Sc Pre-Medical">F.Sc Pre-Medical (Intermediate)</option>
+                                <option value="F.Sc Pre-Engineering">F.Sc Pre-Engineering (Intermediate)</option>
+                                <option value="ICS Computer Science">ICS Computer Science</option>
+                                <option value="I.Com Commerce">I.Com Commerce</option>
+                                <option value="BS Computer Science">BS Computer Science (4 Year)</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="prevSchool">Previous School / Institute *</label>
+                            <input class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="prevSchool" name="prevSchool" placeholder="High School Name" required type="text"/>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="board">Board / Examination Body *</label>
+                            <input class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="board" name="board" placeholder="e.g. BISE Lahore / Rawalpindi" required type="text"/>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="font-label-bold text-label-bold text-on-surface" for="marks">Matric / O-Level Percentage (%) *</label>
+                            <input class="px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-body-md text-on-surface transition-colors" id="marks" name="marks" max="100" min="40" placeholder="e.g. 88.5" required type="number" step="0.1"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Document Upload -->
+                <div id="step-3-content" class="step-pane hidden">
+                    <h2 class="font-headline-sm text-headline-sm text-primary mb-6 border-b border-outline-variant pb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined">upload_file</span> Supporting Documents
+                    </h2>
+                    <div class="space-y-6 mb-8">
+                        <div class="border-2 border-dashed border-outline-variant hover:border-primary p-8 rounded-xl text-center bg-surface cursor-pointer transition-all" onclick="document.getElementById('docInput').click()">
+                            <span class="material-symbols-outlined text-4xl text-primary mb-2">cloud_upload</span>
+                            <h3 class="font-label-bold text-on-surface text-base mb-1">Click or Drag Result Cards &amp; CNIC / Form-B</h3>
+                            <p class="text-xs text-on-surface-variant">Accepted formats: PDF, JPG, PNG (Max 5MB each)</p>
+                            <input id="docInput" type="file" class="hidden" multiple onchange="handleFileSelect(event)"/>
+                        </div>
+                        <div id="file-list" class="space-y-2">
+                            <div class="text-xs font-label-bold text-outline uppercase tracking-wider">Uploaded Files Preview</div>
+                            <div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-between text-sm">
+                                <span class="flex items-center gap-2 text-on-surface">
+                                    <span class="material-symbols-outlined text-primary">description</span> Matric_Result_Card_2024.pdf
+                                </span>
+                                <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-label-bold">Attached</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4: Review & Submit -->
+                <div id="step-4-content" class="step-pane hidden">
+                    <h2 class="font-headline-sm text-headline-sm text-primary mb-6 border-b border-outline-variant pb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined">fact_check</span> Application Summary
+                    </h2>
+                    <div id="review-summary" class="bg-surface-container-low rounded-xl p-6 border border-outline-variant space-y-4 mb-8">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="flex items-start gap-3 bg-secondary-container/20 p-4 rounded-lg border border-secondary-container mb-6">
+                        <input type="checkbox" id="declaration" required class="mt-1 rounded text-primary focus:ring-primary"/>
+                        <label for="declaration" class="text-xs text-on-surface leading-relaxed">
+                            I hereby declare that all information provided in this application is accurate and true to the best of my knowledge. I agree to abide by the rules and regulations of Punjab Degree School &amp; College.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+                    <button type="button" id="prev-btn" onclick="nextStep(-1)" class="px-6 py-2.5 bg-surface-container-high text-on-surface font-label-bold rounded-lg hover:bg-surface-container-highest transition-all border border-outline-variant flex items-center gap-2 hidden">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span> Previous
+                    </button>
+                    <div></div> <!-- Spacer -->
+                    <button type="button" id="next-btn" onclick="nextStep(1)" class="px-8 py-2.5 bg-primary text-on-primary font-label-bold rounded-lg hover:bg-primary-container transition-all flex items-center gap-2 shadow-sm">
+                        Continue <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                    <button type="submit" id="submit-btn" class="px-8 py-2.5 bg-secondary-fixed text-on-secondary-fixed font-label-bold rounded-lg hover:bg-secondary-fixed-dim transition-all flex items-center gap-2 shadow-md hidden">
+                        Submit Application <span class="material-symbols-outlined text-sm">check_circle</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!-- Success Confirmation Modal -->
+<div id="success-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center hidden p-4">
+    <div class="bg-surface-container-lowest rounded-2xl max-w-md w-full p-8 text-center border border-outline-variant shadow-2xl space-y-4">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-3xl">
+            <span class="material-symbols-outlined text-4xl">check_circle</span>
+        </div>
+        <h3 class="font-headline-sm text-2xl text-primary">Application Submitted!</h3>
+        <p class="text-body-sm text-on-surface-variant">Your admission application has been successfully logged into the PDSC Registrar System.</p>
+        <div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant font-mono text-sm text-primary font-bold">
+            Ref #: <span id="ref-number">PDSC-2024-8849</span>
+        </div>
+        <p class="text-xs text-outline">Please save your Reference Number for tracking. Our admissions desk will contact you via email/SMS.</p>
+        <a href="index.html" class="block w-full py-3 bg-primary text-on-primary font-label-bold rounded-lg hover:bg-primary-container transition-colors">
+            Return to Homepage
+        </a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-primary text-on-primary font-body-sm text-body-sm w-full py-6 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
+    <span>© 2024 Punjab Degree School and College. All rights reserved.</span>
+    <div class="flex gap-4 text-xs">
+        <a class="text-on-primary/80 hover:underline" href="index.html">Home</a>
+        <a class="text-on-primary/80 hover:underline" href="students.html">Student Records</a>
+        <a class="text-on-primary/80 hover:underline" href="staff.html">Staff Directory</a>
+    </div>
+</footer>
+
+<script>
+    let currentStep = 1;
+
+    function goToStep(step) {
+        if (step < currentStep || validateCurrentStep()) {
+            currentStep = step;
+            updateStepUI();
+        }
+    }
+
+    function nextStep(delta) {
+        if (delta === 1 && !validateCurrentStep()) return;
+        currentStep += delta;
+        if (currentStep < 1) currentStep = 1;
+        if (currentStep > 4) currentStep = 4;
+        updateStepUI();
+    }
+
+    function validateCurrentStep() {
+        const activePane = document.getElementById(`step-${currentStep}-content`);
+        const inputs = activePane.querySelectorAll('input[required], select[required], textarea[required]');
+        for (let input of inputs) {
+            if (!input.checkValidity()) {
+                input.reportValidity();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function updateStepUI() {
+        // Toggle Panes
+        for (let i = 1; i <= 4; i++) {
+            const pane = document.getElementById(`step-${i}-content`);
+            const circle = document.getElementById(`step-circle-${i}`);
+            const label = document.getElementById(`step-label-${i}`);
+
+            if (i === currentStep) {
+                pane.classList.remove('hidden');
+                circle.className = "w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-bold shadow-md transition-all";
+                label.className = "font-label-bold text-label-bold text-primary";
+            } else if (i < currentStep) {
+                pane.classList.add('hidden');
+                circle.className = "w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-bold border border-secondary transition-all";
+                label.className = "font-label-bold text-label-bold text-secondary";
+            } else {
+                pane.classList.add('hidden');
+                circle.className = "w-9 h-9 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-bold border border-outline-variant transition-all";
+                label.className = "font-label-bold text-label-bold text-on-surface-variant";
+            }
+        }
+
+        // Nav Buttons
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+
+        if (currentStep === 1) {
+            prevBtn.classList.add('hidden');
+        } else {
+            prevBtn.classList.remove('hidden');
+        }
+
+        if (currentStep === 4) {
+            nextBtn.classList.add('hidden');
+            submitBtn.classList.remove('hidden');
+            populateReviewSummary();
+        } else {
+            nextBtn.classList.remove('hidden');
+            submitBtn.classList.add('hidden');
+        }
+    }
+
+    function handleFileSelect(e) {
+        const files = e.target.files;
+        const fileList = document.getElementById('file-list');
+        for (let file of files) {
+            const div = document.createElement('div');
+            div.className = "p-3 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-between text-sm";
+            div.innerHTML = `
+                <span class="flex items-center gap-2 text-on-surface">
+                    <span class="material-symbols-outlined text-primary">description</span> ${file.name}
+                </span>
+                <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-label-bold">Uploaded</span>
+            `;
+            fileList.appendChild(div);
+        }
+    }
+
+    function populateReviewSummary() {
+        const form = document.getElementById('admission-form');
+        const formData = new FormData(form);
+        const container = document.getElementById('review-summary');
+        
+        container.innerHTML = `
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div><strong class="text-on-surface-variant">Applicant Name:</strong> <p class="text-primary font-label-bold">${formData.get('firstName') || ''} ${formData.get('lastName') || ''}</p></div>
+                <div><strong class="text-on-surface-variant">Email Address:</strong> <p class="text-on-surface">${formData.get('email') || 'N/A'}</p></div>
+                <div><strong class="text-on-surface-variant">Contact Phone:</strong> <p class="text-on-surface">${formData.get('phone') || 'N/A'}</p></div>
+                <div><strong class="text-on-surface-variant">Program Choice:</strong> <p class="text-primary font-label-bold">${formData.get('program') || 'Not selected'}</p></div>
+                <div><strong class="text-on-surface-variant">Previous Board / School:</strong> <p class="text-on-surface">${formData.get('board') || 'N/A'} - ${formData.get('prevSchool') || ''}</p></div>
+                <div><strong class="text-on-surface-variant">Academic Score:</strong> <p class="text-on-surface">${formData.get('marks') || ''}%</p></div>
+            </div>
+        `;
+    }
+
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        const refId = 'PDSC-2024-' + Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('ref-number').innerText = refId;
+        document.getElementById('success-modal').classList.remove('hidden');
+    }
+</script>
+</body>
+</html>
